@@ -118,7 +118,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-image: url("./images/redsmoke.jpg");
+    background-image: url("assets/images/redsmoke.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border-style:inset;
