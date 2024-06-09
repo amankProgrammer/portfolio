@@ -1,0 +1,510 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'sans-serif';
+}
+
+:root {
+    --bg-color: #000;
+    --second-bg-color: #161616;
+    --text-color: #fff;
+    --main-color: #db1414;
+}
+
+html {
+    font-size: 50%;
+    overflow-x: hidden;
+}
+body {
+    background-color: black;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: var(--text-color)
+}
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--main-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.log:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+.navbar a:hover,
+.navbar a:active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+    display: none;
+}
+@media (max-width:995px){
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid var(--main-color);
+        border-bottom: 3px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem 3%;
+        background-color: var(--second-bg-color);
+        border-top: 0.3rem solid rgba(0,0,0,0.1);
+        display: none;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    .navbar a:hover, 
+    .navbar a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--main-color);
+    }
+}
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background: url("/assets/images/redsmoke.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-style:inset;
+
+}
+.home .home-content {
+    margin-top: 40%;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+span {
+    color: var(--main-color);
+}
+.home-img {
+    border-radius: 50%;
+}
+.home-img img{
+    top: 5%;
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+}
+.home-img img:hover{
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 25px var(--main-color));
+}
+.home-content p{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.social-icon a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+}
+.social-icon a:hover {
+    color: black;
+    transform: scale(1.3)translatedY(-5px);
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--bg-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.03);
+    background-color: var(--main-color);
+    color: black;
+    box-shadow: 0 0 25px var(--main-color);
+}
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.typing-text span{
+    position: relative;
+}
+.typing-text span::before{
+    content: 'Software Developer';
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.typing-text span::after {
+    content:'';
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8;
+    animation: cursor 0.6 infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor {
+    to {
+        border-left: 1px solid var(--main-color);
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: 'Web Developer';
+    }
+    21%, 40% {
+        content: 'Software Developer';
+    }
+    41%, 60% {
+        content: 'Java Developer';
+    }
+    61%, 80% {
+        content: 'UI designer';
+    }
+}
+@keyframes typing {
+    10%, 15%,
+    30%, 35%,
+    50%, 55%,
+    70%, 75%,
+    90%, 95% {
+        width: 0;
+    }
+    5%, 20%,
+    25%, 40%,
+    45%, 60%,
+    65%, 80%, 85%{
+        width: calc(100% + 8px);
+    }
+}
+@media (max-width:1000px){
+    .home {
+        gap: 4rem;
+
+    }
+}
+@media (max-width:995px){
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+    .home .home-content h3 {
+        font-size: 2.5rem;
+    }
+    .home-content h1{
+        font-size: 5rem;
+    }
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+.skills{
+
+    border-style:inset;
+
+}
+
+.skills .container {
+    background: rgba(246, 246, 246, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+
+}
+
+.skills .container .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    gap: 1.8rem;
+}
+.skills .container .bar {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.767);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.skills .container .bar:hover {
+    box-shadow: 0 4px 10px var(--main-color);
+    transform: scale(1.03);
+}
+.skills .container .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.skills .container .bar .info img {
+    width: 90px;
+}
+.skills .container .bar .info  span{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    color: var(--text-color);
+}
+@media screen and (max-width:600px) {
+    .skills .container {
+        margin: 0;
+        padding: 0;
+    }
+    .skills .container .row {
+        grid-template-columns: repeat(3,1fr);
+        margin: 1rem;
+        padding: 2rem 0.2rem 2rem 0.2rem;
+        gap: 1rem;
+    }
+    .skills .container {
+        margin-top: 5px;
+        width: 100%;
+    }
+}
+
+.projects{
+    background: url("/assets/images/thick-twirling.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-style:inset;
+
+}
+.projects .container {
+    background: #e1352c54;
+    color: var(--text-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 100%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.projects h1{
+    font-size: 50px;
+    font-family: cursive;
+    text-align: center;
+}
+.projects .container .bar {
+    margin: 9px;
+    padding: 20% 12%;
+    border-radius: 1rem;
+    background: var(--bg-color);
+    transition: 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    position: relative;
+    color: black;
+}
+.projects .container .bar:hover {
+    box-shadow: 0 4px 10px var(--main-color);
+    transform: scale(1.03);
+    color: white;
+}
+
+
+.heading {
+    margin-bottom: 3rem;
+    font-family: cursive;
+    color: white;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+}
+
+.contact {
+    background: url("/assets/images/1899174.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-style:inset;
+
+}
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.contact .form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact .form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border-radius: 0.8rem;
+    border: 2px solid var(--main-color);
+    margin: 1rem 0;
+    resize: none;
+}
+.contact form .btn {
+    margin-top: 2rem;
+}
+
+.footer{
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+
+}
+.footer .social {
+    text-align: center;
+    padding-bottom: 15px;
+    color: rgb(211, 11, 11);
+}
+.footer .social a {
+    font-size: 25px;
+    color: rgb(245, 241, 241);
+    border: 2px solid rgb(245, 238, 238);
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-5px);
+    background:rgb(0, 0, 0);
+    color: var(--main-color);
+}
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: rgb(255, 251, 251);
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+.footer ul li a:hover {
+    border-bottom: 3px solid rgb(236, 6, 6);
+}
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+
+@media(max-width:1285px) {
+    html {
+        font-size: 55%;
+    }
+    .services-container {
+        padding-bottom: 7rem;
+        grid-template-columns: repeat(2,1fr);
+        margin: 0 5rem;
+    }
+}
+@media(max-width:991px){
+    .header {
+        padding:2rem 3%;
+    }
+    section {
+        padding: 10rem 3% 2rem;
+    }
+    .services {
+        padding-bottom: 7rem;
+    }
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+
+
+
+
+
+
+
+
