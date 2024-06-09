@@ -118,7 +118,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-image: url("assets/images/redsmoke.jpg");
+    background-image: url("redsmoke.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border-style:inset;
@@ -343,11 +343,7 @@ span {
 }
 
 .projects{
-    background: url("/assets/images/thick-twirling.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
     border-style:inset;
-
 }
 .projects .container {
     background: #e1352c54;
@@ -392,7 +388,7 @@ span {
 }
 
 .contact {
-    background: url("/assets/images/1899174.jpg");
+    background: url("1899174.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     border-style:inset;
